@@ -31,15 +31,15 @@ Saved cleaned data to: cleaned_news_articles.csv.
 #### Models Used:
 ##### Hugging Face Transformers:
 
-###### Model: distilbert-base-uncased-finetuned-sst-2-english.
+##### Model: distilbert-base-uncased-finetuned-sst-2-english.
 ###### Task: Sentiment classification (Positive/Negative).
 ###### Result: Added sentiment column based on description.
 ##### TextBlob:
 
-###### Extracted:
-###### Polarity: Measures sentiment (-1 to 1).
-###### Subjectivity: Ranges from 0 (objective) to 1 (subjective).
+##### Extracted:
+##### Polarity: Measures sentiment (-1 to 1).
+##### Subjectivity: Ranges from 0 (objective) to 1 (subjective).
 ##### Columns Added:
-###### sentiment
-###### polarity
-###### subjectivity.
+##### sentiment
+##### polarity
+##### subjectivity.
