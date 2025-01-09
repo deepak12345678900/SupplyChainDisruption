@@ -19,14 +19,14 @@ supply chain delays.
 #### Results:
 Articles fetched were saved to a CSV file: news_articles.csv.
 ### 2. Data Cleaning
-Used regular expressions (re) to clean text data:
-Removed newline, tab characters, and extra spaces.
-Converted text to lowercase.
-Removed special characters and punctuation.
+#### Used regular expressions (re) to clean text data:
+#### Removed newline, tab characters, and extra spaces.
+#### Converted text to lowercase.
+#### Removed special characters and punctuation.
 #### Cleaned columns:
-title
-description
-Saved cleaned data to: cleaned_news_articles.csv.
+##### title
+##### description
+##### Saved cleaned data to: cleaned_news_articles.csv.
 ### 3. Sentiment Analysis
 #### Models Used:
 ##### Hugging Face Transformers:
