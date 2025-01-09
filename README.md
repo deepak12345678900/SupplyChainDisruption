@@ -1,4 +1,4 @@
-###Milestone 1: Data Collection, Cleaning, and Sentiment Analysis
+### Milestone 1: Data Collection, Cleaning, and Sentiment Analysis
 Objective
 The goal of Milestone 1 is to collect news articles related to supply chain disruptions, clean and preprocess the data, and analyze the sentiment to understand trends and insights.
 
