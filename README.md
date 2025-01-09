@@ -6,16 +6,16 @@ The goal of Milestone 1 is to collect news articles related to supply chain disr
 ### 1. Data Collection
 API Used: NewsAPI
 #### Keywords:
-supply chain management disruption
-logistics challenges
-global supply chain issues
-supply chain delays
+supply chain management disruption,
+logistics challenges,
+global supply chain issues,
+supply chain delays.
 #### Parameters:
-Start Date: Adjusted to the last 30 days based on API limitations.
-End Date: Set to 2024-12-01.
-Language: English.
-Sorting: By relevancy.
-Pagination: Collected up to 5 pages per keyword to maximize results.
+##### Start Date: Adjusted to the last 30 days based on API limitations.
+##### End Date: Set to 2024-12-01.
+##### Language: English.
+##### Sorting: By relevancy.
+##### Pagination: Collected up to 5 pages per keyword to maximize results.
 #### Results:
 Articles fetched were saved to a CSV file: news_articles.csv.
 ### 2. Data Cleaning
