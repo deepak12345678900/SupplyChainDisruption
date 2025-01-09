@@ -37,9 +37,9 @@ Saved cleaned data to: cleaned_news_articles.csv.
 ##### TextBlob:
 
 ###### Extracted:
-Polarity: Measures sentiment (-1 to 1).
-Subjectivity: Ranges from 0 (objective) to 1 (subjective).
-Columns Added:
-sentiment
-polarity
-subjectivity.
+###### Polarity: Measures sentiment (-1 to 1).
+###### Subjectivity: Ranges from 0 (objective) to 1 (subjective).
+##### Columns Added:
+###### sentiment
+###### polarity
+###### subjectivity.
