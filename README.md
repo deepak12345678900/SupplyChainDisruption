@@ -32,14 +32,11 @@ Articles fetched were saved to a CSV file: news_articles.csv.
 ##### Hugging Face Transformers:
 
 ##### Model: distilbert-base-uncased-finetuned-sst-2-english.
-###### Task: Sentiment classification (Positive/Negative).
-###### Result: Added sentiment column based on description.
+##### Task: Sentiment classification (Positive/Negative).
+##### Result: Added sentiment column based on description.
 ##### TextBlob:
 
 ##### Extracted:
 ##### Polarity: Measures sentiment (-1 to 1).
 ##### Subjectivity: Ranges from 0 (objective) to 1 (subjective).
-##### Columns Added:
-##### sentiment
-##### polarity
-##### subjectivity.
+
