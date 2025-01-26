@@ -2,14 +2,26 @@ import pandas as pd
 import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
+import smtplib
+import requests
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 # Load Data (Replace with actual CSV or DataFrame)
 df = pd.read_csv("C:/Users/DEEPAK SANTHOSH/Documents/SupplyChainDisruption/MILESTONE4/Diesel_warehouse_data.csv")
 
+SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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"
 # Calculate additional columns
 df['Remaining Inventory'] = df['Diesel Capacity'] + df['Monthly Incoming'] - df['Monthly Outgoing']
 df['Utilization (%)'] = (df['Monthly Incoming'] / df['Diesel Capacity']) * 100
 
+def send_slack_notification(message, webhook_url):
+    payload = {"text": message}
+    response = requests.post(webhook_url, json=payload)
+    if response.status_code == 200:
+        print("Slack notification sent successfully.")
+    else:
+        print(f"Failed to send Slack notification. Error: {response.status_code}")
 # Streamlit Dashboard Setup
 st.set_page_config(page_title="Diesel Inventory Dashboard", layout="wide")
 
@@ -36,11 +48,19 @@ positive_sentiment_count = df['sentiment'].value_counts().get('Positive', 0)
 negative_sentiment_count = df['sentiment'].value_counts().get('Negative', 0)
 
 if remaining_inventory < 0.2 * df['Diesel Capacity'].sum():
-    st.warning("⚠️ **Inventory is critically low!** Consider restocking immediately to avoid disruptions.")
+    message = "⚠️ **Inventory is critically low!** Consider restocking immediately to avoid disruptions."
+    st.warning(message)
+    send_slack_notification(message, SLACK_WEBHOOK_URL)
+
 elif high_risk_count > 0:
-    st.error("⚠️ **High-risk entries detected!** Monitor operations closely and adjust the supply chain.")
+    message="⚠️ **High-risk entries detected!** Monitor operations closely and adjust the supply chain."
+    st.error(message)
+    send_slack_notification(message, SLACK_WEBHOOK_URL)
+
 elif positive_sentiment_count > negative_sentiment_count:
-    st.success("✅ **Positive sentiment dominates.** You can sell diesel at a higher margin.")
+    message = "✅ **Positive sentiment dominates.** You can sell diesel at a higher margin."
+    st.success(message)
+    send_slack_notification(message,SLACK_WEBHOOK_URL)
 else:
     st.info("ℹ️ **Operations are stable.** Keep monitoring for future trends.")
 
@@ -76,3 +96,5 @@ with tab3:
 # Interactive Data Table
 st.markdown("## 📋 Data Overview")
 st.dataframe(df, width=800, height=400)
+
+
